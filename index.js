@@ -65,6 +65,7 @@ function generatePassword(
     toast.textContent = "Select at least one requirement";
     return "";
   } else {
+    toast.classList.remove("error")
     toast.textContent = "";
   }
 
