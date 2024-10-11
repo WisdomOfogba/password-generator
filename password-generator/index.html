@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
+    <meta name="description" content="A Password Generator, created by Wisdom | Frontend Next.js Developer Using HTML, CSS and Javascript">
+    <title>Password Gen | Password Generator | made by Wisdom</title>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="logo">Password Gen</a>
+    </header>
+    <div id="toast"></div>
+    <main>
+      <h1>Password Gen: password-generator</h1>
+      <form class="form">
+        <h2 class="text">Fill in the Password requirement</h2>
+        <label for="length">
+          Password Length:
+          <input
+            type="number"
+            name="length"
+            id="length"
+            placeholder="8"
+            required
+            min="1"
+          />
+        </label>
+        <label for="Lowercase"
+          ><input
+            type="checkbox"
+            name="Lowercase"
+            id="Lowercase"
+            checked
+          />Lowercase Letters</label
+        >
+        <label for="Uppercase"
+          ><input type="checkbox" name="Uppercase" id="Uppercase" />Uppercase
+          Letters</label
+        >
+        <label for="Numbers"
+          ><input type="checkbox" name="Numbers" id="Numbers" />Numbers</label
+        >
+        <label for="Symbols"
+          ><input type="checkbox" name="Symbols" id="Symbols" />Symbols</label
+        >
+        <button type="submit" class="btn">Generate</button>
+      </form>
+      <p class="p">Generated Password: <span id="password"></span> <span id="copy">copy</span></p>
+      <p class="note">the password is the exact length of the password but does not show it all</p>
+    </main>
+    <footer>
+      <p>© copyright Password Gen | @ Wisdom Ofogba</p>
+      <ul>
+        <li><a href="https://wisdom-ofogba.vercel.app" target="_blank">Wisdom's Portfolios</a></li>
+        <li><a href="https://wa.me/+2348163657363" target="_blank">Whatsapp</a></li>
+        <li><a href="https://www.instagram.com/ofogbawisdom/" target="_blank">Instagram</a></li>
+        <li><a href="https://github.com/WisdomOfogba" target="_blank">Github</a></li>
+        <li><a href="https://x.com/OfogbaWisd50646" target="_blank">X</a></li>
+      </ul>
+    </footer>
+    <script src="../index.js"></script>
+  </body>
+</html>
