@@ -8,8 +8,8 @@ const Symbols = document.getElementById("Symbols");
 const Password = document.getElementById("password");
 const Copy = document.getElementById("copy");
 let copied = false;
-const sliderEl = document.querySelector("#length")
-const sliderValue = document.querySelector(".value")
+const sliderEl = document.querySelector("#length");
+const sliderValue = document.querySelector(".value");
 const toastWraper = document.getElementById("toast-wraper");
 
 passwordForm.addEventListener("submit", (event) => {
@@ -34,13 +34,12 @@ passwordForm.addEventListener("submit", (event) => {
     const text = password;
     navigator.clipboard.writeText(text);
     console.log(text);
-    Copy.textContent = "copied"
+    Copy.textContent = "copied";
 
     setTimeout(() => {
-      Copy.textContent = "copy"
+      Copy.textContent = "copy";
     }, 3000);
-    
-});
+  });
 });
 
 function generatePassword(
@@ -53,7 +52,7 @@ function generatePassword(
   const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
   const upercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const numberChars = "0123456789";
-  const symbolChars = "~`!@#$%^&*()_-+=<>,.''?/:;{{}}|";
+  const symbolChars = "~`!@#$%^&*()_-+=<>,.''?/\\:;{{}}|";
 
   let allowedChars = "";
   let password = "";
@@ -64,17 +63,13 @@ function generatePassword(
   allowedChars += includeSybmols ? symbolChars : "";
 
   if (allowedChars.length === 0) {
-    toastWraper.classList.add("fade-in")
-    toastWraper.classList.remove("fade-out")
+    toastWraper.classList.add("fade-in");
+    toastWraper.classList.remove("fade-out");
     toast.textContent = "Please Select at least one requirement!";
     return "";
-  } else {
-    if(toastWraper.classList.contains("fade-in")){
-      toastWraper.classList.add("fade-out")
-    }else {
-      toastWraper.classList.remove("fade-in")
-    }
-    toast.textContent = "";
+  } else if (toastWraper.classList.contains("fade-in")) {
+    toastWraper.classList.add("fade-out");
+    toastWraper.classList.remove("fade-in");
   }
 
   for (let i = 0; i < length; i++) {
@@ -84,9 +79,8 @@ function generatePassword(
   return password;
 }
 
-
 sliderEl.addEventListener("input", (event) => {
-  const tempSliderValue = event.target.value; 
-  
+  const tempSliderValue = event.target.value;
+
   sliderValue.textContent = tempSliderValue;
-})
+});
