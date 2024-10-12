@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <meta
       name="description"
       content="A Password Generator, created by Wisdom | Frontend Next.js Developer Using HTML, CSS and Javascript"
@@ -14,42 +14,82 @@
     <header>
       <a href="/" class="logo">Password Gen</a>
     </header>
-    <div id="toast"></div>
+    <div class="toast-wraper" id="toast-wraper">
+      <p class="error" id="toast"></p>
+    </div>
     <main>
       <h1>Password Gen: password-generator</h1>
       <form class="form">
         <h2 class="text">Fill in the Password requirement</h2>
-        <label for="length">
-          Password Length:
+        <label for="length" class="range">
+          Length:
+          <p class="value">4</p>
           <input
-          type="range"
-          value="8"
-          id="length"
-          name="length"
-          min="1"
-          max="50"
-          oninput="this.nextElementSibling.value = this.value"
+            class=""
+            type="range"
+            value="4"
+            id="length"
+            name="length"
+            min="4"
+            max="12"
           />
-          <output>8</output>
         </label>
-        <label for="Lowercase">
-          <input
-            type="checkbox"
-            name="Lowercase"
-            id="Lowercase"
-            checked
-          />Lowercase Letters</label
-        >
-        <label for="Uppercase"
-          ><input type="checkbox" name="Uppercase" id="Uppercase" />Uppercase
-          Letters</label
-        >
-        <label for="Numbers"
-          ><input type="checkbox" name="Numbers" id="Numbers" />Numbers</label
-        >
-        <label for="Symbols"
-          ><input type="checkbox" name="Symbols" id="Symbols" />Symbols</label
-        >
+        <div class="checkbox-wrapper-4">
+          <input class="inp-cbx" id="Lowercase" checked type="checkbox" />
+          <label class="cbx" for="Lowercase"
+            ><span>
+              <svg width="12px" height="10px">
+                <use xlink:href="#check-4"></use></svg></span
+            ><span>Lowercase letters</span></label
+          >
+          <svg class="inline-svg">
+            <symbol id="check-4" viewbox="0 0 12 10">
+              <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+            </symbol>
+          </svg>
+        </div>
+        <div class="checkbox-wrapper-4">
+          <input class="inp-cbx" id="Uppercase" type="checkbox" />
+          <label class="cbx" for="Uppercase"
+            ><span>
+              <svg width="12px" height="10px">
+                <use xlink:href="#check-4"></use></svg></span
+            ><span>Capital letters</span></label
+          >
+          <svg class="inline-svg">
+            <symbol id="check-4" viewbox="0 0 12 10">
+              <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+            </symbol>
+          </svg>
+        </div>
+        <div class="checkbox-wrapper-4">
+          <input class="inp-cbx" id="Numbers" type="checkbox" />
+          <label class="cbx" for="Numbers"
+            ><span>
+              <svg width="12px" height="10px">
+                <use xlink:href="#check-4"></use></svg></span
+            ><span>Numbers</span></label
+          >
+          <svg class="inline-svg">
+            <symbol id="check-4" viewbox="0 0 12 10">
+              <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+            </symbol>
+          </svg>
+        </div>
+        <div class="checkbox-wrapper-4">
+          <input class="inp-cbx" id="Symbols" type="checkbox" />
+          <label class="cbx" for="Symbols"
+            ><span>
+              <svg width="12px" height="10px">
+                <use xlink:href="#check-4"></use></svg></span
+            ><span>Symbols</span></label
+          >
+          <svg class="inline-svg">
+            <symbol id="check-4" viewbox="0 0 12 10">
+              <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+            </symbol>
+          </svg>
+        </div>
         <button type="submit" class="btn">Generate</button>
       </form>
       <p class="p">
@@ -57,6 +97,7 @@
         <span id="copy">copy</span>
       </p>
       <p class="note">
+        Note: 
         the password is the exact length of the password but does not show it
         all
       </p>

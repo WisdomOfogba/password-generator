@@ -8,6 +8,9 @@ const Symbols = document.getElementById("Symbols");
 const Password = document.getElementById("password");
 const Copy = document.getElementById("copy");
 let copied = false;
+const sliderEl = document.querySelector("#length")
+const sliderValue = document.querySelector(".value")
+const toastWraper = document.getElementById("toast-wraper");
 
 passwordForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -61,11 +64,16 @@ function generatePassword(
   allowedChars += includeSybmols ? symbolChars : "";
 
   if (allowedChars.length === 0) {
-    toast.classList.add("error")
-    toast.textContent = "Select at least one requirement";
+    toastWraper.classList.add("fade-in")
+    toastWraper.classList.remove("fade-out")
+    toast.textContent = "Please Select at least one requirement!";
     return "";
   } else {
-    toast.classList.remove("error")
+    if(toastWraper.classList.contains("fade-in")){
+      toastWraper.classList.add("fade-out")
+    }else {
+      toastWraper.classList.remove("fade-in")
+    }
     toast.textContent = "";
   }
 
@@ -75,3 +83,10 @@ function generatePassword(
   }
   return password;
 }
+
+
+sliderEl.addEventListener("input", (event) => {
+  const tempSliderValue = event.target.value; 
+  
+  sliderValue.textContent = tempSliderValue;
+})
